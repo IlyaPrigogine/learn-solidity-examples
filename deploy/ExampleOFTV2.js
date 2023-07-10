@@ -11,7 +11,7 @@ module.exports = async function ({ deployments, getNamedAccounts }) {
     const globalSupply = ethers.utils.parseUnits("1000000", 18)
     const sharedDecimals = 6;
 
-    await deploy("ExampleOFTV2", {
+    await deploy("ExampleOFTV201", {
         from: deployer,
         args: [lzEndpointAddress, globalSupply, sharedDecimals],
         log: true,
