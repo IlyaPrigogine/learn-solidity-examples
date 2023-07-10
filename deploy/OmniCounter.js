@@ -2,8 +2,10 @@ const LZ_ENDPOINTS = require("../constants/layerzeroEndpoints.json")
 
 module.exports = async function ({ deployments, getNamedAccounts }) {
     const { deploy } = deployments
-    const { deployer } = await getNamedAccounts()
-    console.log(`>>> your address: ${deployer}`)
+    const { deployer } = await getNamedAccounts();
+
+    console.log("hello world");
+    console.log(`>>> your address: ${deployer}`);
 
     // get the Endpoint address
     const endpointAddr = LZ_ENDPOINTS[hre.network.name]
