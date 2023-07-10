@@ -104,7 +104,7 @@ npx hardhat --network fuji onftSend --target-network bsc-testnet --token-id 11 -
 7. Verify your token no longer exists in your wallet on the source chain & wait for it to reach the destination side.
 ```angular2html
 npx hardhat --network bsc-testnet ownerOf --token-id 1 --contract ExampleUniversalONFT721
-npx hardhat --network fuji ownerOf --token-id 1 --contract ExampleUniversalONFT721
+npx hardhat --network fuji ownerOf --token-id 11 --contract ExampleUniversalONFT721
 ```
 
 

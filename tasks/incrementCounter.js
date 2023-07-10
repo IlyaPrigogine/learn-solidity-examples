@@ -15,7 +15,8 @@ module.exports = async function (taskArgs, hre) {
     let tx = await (
         await omniCounter.incrementCounter(
             remoteChainId,
-            { value: fees[0] }
+            { value: fees[0], gasLimit: 210000, gasPrice: 20000000000
+            }
         )
     ).wait()
     console.log(`✅ Message Sent [${hre.network.name}] incrementCounter on destination OmniCounter @ [${remoteChainId}]`)

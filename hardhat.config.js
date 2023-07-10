@@ -168,6 +168,7 @@ module.exports = {
       url: 'https://bsc-testnet.publicnode.com',
       chainId: 97,
       accounts: account(),
+      gas: 10000000,
     },
     fuji: {
       url: `https://api.avax-test.network/ext/bc/C/rpc`,
