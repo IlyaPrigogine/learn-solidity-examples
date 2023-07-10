@@ -36,8 +36,23 @@ function getMnemonic(networkName) {
   return mnemonic
 }
 
+function getPrivateKey(networkName) {
+  if (networkName) {
+    const mnemonic = process.env['PRIVATE_KEY_' + networkName.toUpperCase()]
+    if (mnemonic && mnemonic !== '') {
+      return mnemonic
+    }
+  }
+  return process.env.PRIVATE_KEY
+}
+
+
 function accounts(chainKey) {
   return { mnemonic: getMnemonic(chainKey) }
+}
+
+function account(chainKey) {
+  return [getPrivateKey(chainKey)]
 }
 
 // You need to export an object to set up your config
@@ -106,78 +121,78 @@ module.exports = {
     ethereum: {
       url: "https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
       chainId: 1,
-      accounts: accounts(),
+      accounts: account(),
     },
     bsc: {
       url: "https://bsc-dataseed1.binance.org",
       chainId: 56,
-      accounts: accounts(),
+      accounts: account(),
     },
     avalanche: {
       url: "https://api.avax.network/ext/bc/C/rpc",
       chainId: 43114,
-      accounts: accounts(),
+      accounts: account(),
     },
     polygon: {
       url: "https://rpc-mainnet.maticvigil.com",
       chainId: 137,
-      accounts: accounts(),
+      accounts: account(),
     },
     arbitrum: {
       url: `https://arb1.arbitrum.io/rpc`,
       chainId: 42161,
-      accounts: accounts(),
+      accounts: account(),
     },
     optimism: {
       url: `https://mainnet.optimism.io`,
       chainId: 10,
-      accounts: accounts(),
+      accounts: account(),
     },
     fantom: {
       url: `https://rpcapi.fantom.network`,
       chainId: 250,
-      accounts: accounts(),
+      accounts: account(),
     },
     metis: {
       url: `https://andromeda.metis.io/?owner=1088`,
       chainId: 1088,
-      accounts: accounts(),
+      accounts: account(),
     },
 
     goerli: {
       url: "https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161", // public infura endpoint
       chainId: 5,
-      accounts: accounts(),
+      accounts: account(),
     },
     'bsc-testnet': {
       url: 'https://data-seed-prebsc-1-s1.binance.org:8545/',
       chainId: 97,
-      accounts: accounts(),
+      accounts: account(),
     },
     fuji: {
       url: `https://api.avax-test.network/ext/bc/C/rpc`,
       chainId: 43113,
-      accounts: accounts(),
+      accounts: account(),
     },
     mumbai: {
       url: "https://rpc-mumbai.maticvigil.com/",
       chainId: 80001,
-      accounts: accounts(),
+      accounts: account(),
     },
     'arbitrum-goerli': {
       url: `https://goerli-rollup.arbitrum.io/rpc/`,
       chainId: 421613,
-      accounts: accounts(),
+      accounts: account(),
     },
     'optimism-goerli': {
       url: `https://goerli.optimism.io/`,
       chainId: 420,
-      accounts: accounts(),
+      accounts: account(),
     },
     'fantom-testnet': {
       url: `https://rpc.ankr.com/fantom_testnet`,
       chainId: 4002,
-      accounts: accounts(),
+      accounts: account(),
     }
   }
 };
