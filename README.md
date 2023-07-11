@@ -41,19 +41,19 @@ If the decimal point is 18, then uint64 can only represent approximately 18 toke
 
 1. Deploy two contracts:
 ```angular2html
-npx hardhat --network goerli deploy --tags ExampleOFTV2
+npx hardhat --network goerli deploy --tags ExampleOFTV204
 ```
 ```angular2html
-npx hardhat --network fuji deploy --tags ExampleOFTV2
+npx hardhat --network fuji deploy --tags ExampleOFTV204
 ```
 
 2. Set the "trusted remotes" (ie: your contracts) so each of them can receive messages from one another, and `only` one another.
 ```angular2html
-npx hardhat --network goerli setTrustedRemote --target-network fuji --contract ExampleOFTV203
+npx hardhat --network goerli setTrustedRemote --target-network fuji --contract ExampleOFTV204
 ```
 
 ```angular2html
-npx hardhat --network fuji setTrustedRemote --target-network goerli --contract ExampleOFTV203
+npx hardhat --network fuji setTrustedRemote --target-network goerli --contract ExampleOFTV204
 ```
 
 
