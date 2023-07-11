@@ -11,12 +11,13 @@ module.exports = async function (taskArgs, hre) {
     const endpoint = await ethers.getContractAt("ILayerZeroEndpoint", ENDPOINTS[hre.network.name])
     let fees = await endpoint.estimateFees(remoteChainId, omniCounter.address, "0x", false, adapterParams)
     console.log(`fees[0] (wei): ${fees[0]} / (eth): ${ethers.utils.formatEther(fees[0])}`)
+    let fee = fees[0].mul(2);
+    console.log('actual send fee:', ethers.utils.formatEther(fee))
 
     let tx = await (
         await omniCounter.incrementCounter(
             remoteChainId,
-            { value: fees[0], gasLimit: 210000, gasPrice: 20000000000
-            }
+            { value: fee}
         )
     ).wait()
     console.log(`✅ Message Sent [${hre.network.name}] incrementCounter on destination OmniCounter @ [${remoteChainId}]`)
