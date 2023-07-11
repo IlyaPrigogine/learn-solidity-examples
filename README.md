@@ -115,14 +115,14 @@ OmniCounter is a simple contract with a counter. You can only *remotely* increme
 1. Deploy both OmniCounters:
 
 ```
-npx hardhat --network bsc-testnet deploy --tags OmniCounter
-npx hardhat --network fuji deploy --tags OmniCounter
+npx hardhat --network bsc-testnet deploy --tags OmniCounter2
+npx hardhat --network fuji deploy --tags OmniCounter2
 ````
 
 2. Set the remote addresses, so each contract can receive messages
 ```angular2html
-npx hardhat --network bsc-testnet setTrustedRemote --target-network fuji --contract OmniCounter
-npx hardhat --network fuji setTrustedRemote --target-network bsc-testnet --contract OmniCounter
+npx hardhat --network bsc-testnet setTrustedRemote --target-network fuji --contract OmniCounter2
+npx hardhat --network fuji setTrustedRemote --target-network bsc-testnet --contract OmniCounter2
 ```
 3. Send a cross chain message from `bsc-testnet` to `fuji` !
 ```angular2html

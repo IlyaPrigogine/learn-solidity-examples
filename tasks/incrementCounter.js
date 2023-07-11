@@ -3,7 +3,7 @@ const ENDPOINTS = require("../constants/layerzeroEndpoints.json");
 
 module.exports = async function (taskArgs, hre) {
     const remoteChainId = CHAIN_ID[taskArgs.targetNetwork]
-    const omniCounter = await ethers.getContract("OmniCounter")
+    const omniCounter = await ethers.getContract("OmniCounter2")
 
     // quote fee with default adapterParams
     let adapterParams = ethers.utils.solidityPack(["uint16", "uint256"], [1, 200000]) // default adapterParams example

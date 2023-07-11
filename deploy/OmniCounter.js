@@ -11,7 +11,7 @@ module.exports = async function ({ deployments, getNamedAccounts }) {
     const endpointAddr = LZ_ENDPOINTS[hre.network.name]
     console.log(`[${hre.network.name}] Endpoint address: ${endpointAddr}`)
 
-    await deploy("OmniCounter", {
+    await deploy("OmniCounter2", {
         from: deployer,
         args: [endpointAddr],
         log: true,
@@ -19,4 +19,4 @@ module.exports = async function ({ deployments, getNamedAccounts }) {
     })
 }
 
-module.exports.tags = ["OmniCounter"]
+module.exports.tags = ["OmniCounter2"]
