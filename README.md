@@ -59,7 +59,7 @@ npx hardhat --network fuji setTrustedRemote --target-network goerli --contract E
 
 3. Send tokens from goerli to fuji
 ```angular2html
-npx hardhat --network goerli oftv2Send --target-network fuji --qty 12345 --contract ExampleOFTV203
+npx hardhat --network goerli oftv2Send --target-network fuji --qty 12345 --contract ExampleOFTV204
 ```
  Pro-tip: Check the ERC20 transactions tab of the destination chain block explorer and await your tokens!
 
